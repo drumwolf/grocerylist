@@ -1,16 +1,36 @@
-import { Box, List, ListItem, Tag, TagLabel, TagCloseButton } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Input,
+  List,
+  ListItem,
+  Tag,
+  TagLabel,
+  TagCloseButton
+} from "@chakra-ui/react";
 
 export const Container = (props) => <Box
   as='main'
   m='40px auto'
-  w='480px'
+  w='550px'
   {...props}
 />
+
+export const EntryForm = (props) => <Flex as='form'>
+  <Input
+    bg='white'
+    color='black'
+    placeholder="Basic usage"
+    mr='8px'
+  />
+  <Button colorScheme='green'>Add Item</Button>
+</Flex>
 
 export const GroceryList = (props) => <List
   borderRadius='8px'
   bg='blue.400'
-  mt='20px'
+  mt='10px'
   p='10px'
   {...props}
 />
