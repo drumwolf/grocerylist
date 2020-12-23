@@ -2,6 +2,8 @@ import { Container, GroceryList, Item } from './Components';
 import { Input } from "@chakra-ui/react";
 
 function App() {
+  const groceryList = ['pasta', 'eggs', 'almond butter'];
+
   return (
     <Container>
       <Input
@@ -10,11 +12,9 @@ function App() {
         placeholder="Basic usage"
       />
       <GroceryList>
-        <Item mb='5px'>Green</Item>
-        <Item mb='5px'>Green</Item>
-        <Item mb='5px'>Green</Item>
-        <Item mb='5px'>Green</Item>
-        <Item>Green</Item>
+        {
+          groceryList.map( (item, index) => <Item mt={ index ? '5px' : 0 }>{ item }</Item> )
+        }
       </GroceryList>
     </Container>
   );
