@@ -1,4 +1,4 @@
-import { Box, Input, List, ListItem, Tag, TagLabel } from "@chakra-ui/react";
+import { Box, List, ListItem, Tag, TagLabel, TagCloseButton } from "@chakra-ui/react";
 
 export const Container = (props) => <Box
   as='main'
@@ -18,5 +18,6 @@ export const GroceryList = (props) => <List
 export const Item = ({ children, ...rest }) => <ListItem {...rest}>
   <Tag size='lg'>
     <TagLabel>{ children }</TagLabel>
+    <TagCloseButton />
   </Tag>
 </ListItem>
