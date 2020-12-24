@@ -19,12 +19,23 @@ function App() {
     addItem(newItem);
   }
 
+  const onItemDelete = item => {
+    const newGroceries = {...groceries};
+    if (newGroceries[item]) { delete newGroceries[item] };
+    setGroceries(newGroceries);
+  }
+
   return (
     <Container>
       <EntryForm onSubmit={onEntryFormSubmit} />
       <GroceryList>
         {
-          Object.keys(groceries).map( (item, index) => <Item key={item} mt={ index ? '5px' : 0 }>{ item }</Item> )
+          Object.keys(groceries).map((item, index) => <Item
+            key={item}
+            item={item}
+            mt={ index ? '5px' : 0 }
+            onDelete={onItemDelete}
+          />)
         }
       </GroceryList>
     </Container>

@@ -21,7 +21,7 @@ export const EntryForm = ({ onSubmit }) => <Flex as='form' onSubmit={onSubmit}>
   <Input
     bg='white'
     color='black'
-    placeholder="Basic usage"
+    placeholder="Enter item to be added to grocery list"
     mr='8px'
   />
   <Button type='submit' colorScheme='green'>Add Item</Button>
@@ -35,9 +35,9 @@ export const GroceryList = (props) => <List
   {...props}
 />
 
-export const Item = ({ children, ...rest }) => <ListItem {...rest}>
+export const Item = ({ item, onDelete, ...rest }) => <ListItem {...rest}>
   <Tag size='lg'>
-    <TagLabel>{ children }</TagLabel>
-    <TagCloseButton />
+    <TagLabel>{ item }</TagLabel>
+    <TagCloseButton onClick={() => onDelete(item)} />
   </Tag>
 </ListItem>
