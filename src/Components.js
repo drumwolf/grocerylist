@@ -17,14 +17,14 @@ export const Container = (props) => <Box
   {...props}
 />
 
-export const EntryForm = (props) => <Flex as='form'>
+export const EntryForm = ({ onSubmit }) => <Flex as='form' onSubmit={onSubmit}>
   <Input
     bg='white'
     color='black'
     placeholder="Basic usage"
     mr='8px'
   />
-  <Button colorScheme='green'>Add Item</Button>
+  <Button type='submit' colorScheme='green'>Add Item</Button>
 </Flex>
 
 export const GroceryList = (props) => <List
